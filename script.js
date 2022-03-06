@@ -5,26 +5,19 @@ function computerPlay() {
     return computerChoice
 }
 
-function Play() {
-    let playerSelection;
-    let winner;
-    do {
-        playerSelection = prompt("Rock, Paper, Scissors? ", "").toLowerCase();
-    }
-    while (playerSelection !== "Rock".toLowerCase() && playerSelection !== "Paper".toLowerCase() && playerSelection !== "Scissors".toLowerCase());
-    const computerSelection = computerPlay();
+function playRound(playerSelection, computerSelection) {
     console.log(`Player Selection: ${playerSelection}`);
     console.log(`Computer Selection: ${computerSelection}`);
-    if ((playerSelection === "rock" && computerSelection === "scissors") || (playerSelection === "paper" && computerSelection === "rock") || (playerSelection === "scissors" || computerSelection === "paper")) {
-        winner = `You won ${playerSelection} beats ${computerSelection}.`
-        return winner
-    } else if ((computerSelection === "rock" && playerSelection === "scissors") || (computerSelection === "paper" && playerSelection === "rock") || (computerSelection === "scissors" || computerSelection === "paper")) {
-        winner = `You lost ${computerSelection} beats your ${playerSelection}.`
-        return winner;
+    if ((playerSelection === "rock" && computerSelection === "scissors") || (playerSelection === "paper" && computerSelection === "rock") || (playerSelection === "scissors" && computerSelection === "paper")) {
+        console.log(`You won ${playerSelection} beats ${computerSelection}.`);
+        return 1;
+    } else if ((computerSelection === "rock" && playerSelection === "scissors") || (computerSelection === "paper" && playerSelection === "rock") || (computerSelection === "scissors" &&playerSelection === "paper")) {
+        console.log(`You lost ${computerSelection} beats your ${playerSelection}.`);
+        return -1;
     } else {
-        winner = `Draw you both chode ${playerSelection}`;
-        return winner;
+        console.log(`Draw you both chose ${playerSelection}`);
+        return 0;
     }
     
 }
-Play()
+console.log(playRound("scissors", computerPlay()))
