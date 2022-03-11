@@ -7,8 +7,11 @@ function computerPlay() {
     return computerChoice
 }
 
-/* Plays a round of Rock paper scissors. Displays the player and CPU choices and returns a value accordingly:
- 1 - Player Won, 0 - Draw, -1 CPU won
+/* Plays a round of Rock paper scissors. Displays the player and CPU choices
+and returns a value accordingly:
+ 1 - Player Won,
+ 0 - Draw,
+ -1 CPU won
 
  */
 function playRound(playerSelection, computerSelection) {
@@ -66,5 +69,6 @@ function game() {
         console.log(`The tie ended with a ${playerScore} - ${computerScore} draw. `)
     }
 }
+
 
 game()
