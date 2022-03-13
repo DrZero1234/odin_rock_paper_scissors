@@ -1,4 +1,4 @@
-const buttons = document.querySelector(".selection").querySelectorAll("button");
+const buttons = document.querySelector(".selection").querySelectorAll("div");
 
 const options = ["Rock", "Paper", "Scissors"]
 

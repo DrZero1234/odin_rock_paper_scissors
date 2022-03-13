@@ -10,4 +10,17 @@
     color: yellow;
     height: 100px;
     background-color: grey;
+    margin-bottom: 10px;
+}
+
+.selection {
+    display: flex;
+
+}
+
+.selection > div {
+
+    height: 150px;
+    width: 150px;
+    border: solid;
 }
