@@ -1,3 +1,4 @@
+const buttons = document.querySelector(".selection").querySelectorAll("button");
 
 const options = ["Rock", "Paper", "Scissors"]
 
@@ -70,5 +71,9 @@ function game() {
     }
 }
 
-
-game()
+buttons.forEach((button) => {
+    console.log(`Id ${button.id}`)
+    button.addEventListener("click", () => {
+        playRound(button.id, computerPlay() )
+    })
+})
