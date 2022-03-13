@@ -1,7 +1,28 @@
+@import url('http://fonts.cdnfonts.com/css/60s-scoreboard');
+@import url('http://fonts.cdnfonts.com/css/sf-pixelate');
+
+                
+
+* {
+    border: solid 2px black;
+}
+
+/* Base of the website */
+
+html {
+    background-color: #A1A0C5;
+    box-sizing: border-box;
+    font-family:'SF Pixelate','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+}
+
 .container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
+
+
 
 .title {
     display: flex;
@@ -9,18 +30,49 @@
     justify-content: center;
     color: yellow;
     height: 100px;
-    background-color: grey;
     margin-bottom: 10px;
 }
 
-.selection {
+.intro {
     display: flex;
-
+    flex-direction: row;
+    justify-content: center;
 }
 
-.selection > div {
+/* Scoreboard styles */
 
-    height: 150px;
+.scoreboard {
+    font-family: "60s Scoreboard", sans-serif;
+    color: orange;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.score, #score-separator {
+    font-size: 96px;
+}
+
+/* Rock Paper Scissors */
+
+.selection {
+    display: flex;
+    justify-content: center;
+}
+
+.selection-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    image-rendering: pixelated;
+}
+
+#rock, #paper, #scissors {
     width: 150px;
-    border: solid;
+    height: auto;
+    margin: 20px 45px 20px 45px;
+    padding: 25px;
+    border: solid 5px black;
 }
