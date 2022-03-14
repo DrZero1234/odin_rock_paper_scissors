@@ -3,10 +3,6 @@
 
                 
 
-* {
-    border: solid 2px black;
-}
-
 /* Base of the website */
 
 html {
@@ -48,16 +44,26 @@ html {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin-bottom: 30px;
 }
 
 .score, #score-separator {
-    font-size: 96px;
+    font-size: 80px;
+}
+
+/* status text styles */
+
+.last-round-result {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
 }
 
 /* Rock Paper Scissors */
 
 .selection {
     display: flex;
+    flex: 2;
     justify-content: center;
 }
 
