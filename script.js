@@ -33,16 +33,14 @@ function playRound(playerSelection, computerSelection) {
     // The player won the round
     if ((playerSelection === "rock" && computerSelection === "scissors") || (playerSelection === "paper" && computerSelection === "rock") || (playerSelection === "scissors" && computerSelection === "paper")) {
         last_round_text.textContent = `You won ${playerSelection} beats ${computerSelection}.`;
-
         return 1;
     // The CPU won the round
     } else if ((computerSelection === "rock" && playerSelection === "scissors") || (computerSelection === "paper" && playerSelection === "rock") || (computerSelection === "scissors" &&playerSelection === "paper")) {
-        console.log(`You lost ${computerSelection} beats your ${playerSelection}.`);
+        last_round_text.textContent = `You lost ${computerSelection} beats your ${playerSelection}.`;
         return -1;
     // Round Draw
     } else {
-        console.log(`Draw you both chose ${playerSelection}`);
-        return 0;
+        last_round_text.textContent = `Draw you both chose ${playerSelection}`;
     }
     
 }
@@ -50,38 +48,37 @@ function playRound(playerSelection, computerSelection) {
   Simulates 5 round of rock paper scissors and displays the winner of the series.
 
 */
-function game(playerSelection, cpuSelection) {
-
+function game(playerSelection, computerSelection) {
     // playing the game for 5 rounds
-    while (player_score_int < 5 ||CPU_score_int < 5)
+    if  (player_score_int < 5 && CPU_score_int < 5){
+        result = playRound(playerSelection, computerSelection);
         // asks the user for legitimate choice (Rock, Paper or Scissor)
         // CPU choice with the help of computerPlay function
-        computerSelection = computerPlay()
-        result = playRound(playerSelection, computerSelection)
         // Adding to the result based on the turn´s result
         if (result === 1) {
             player_score_int++;
             human_score_element.textContent = player_score_int;
 
         } else if (result === -1) {
-            computerScore++;
+            CPU_score_int++;
+            CPU_score_element.textContent = CPU_score_int;
         }
-        // The current score of the series.
-        console.log(`Current Score: Player: ${playerScore} - CPU: ${computerScore}`);
     }
     // Evaluating and displaying the winner and the final score
-    if (playerScore > computerScore) {
-        console.log(`Player won with the score of ${playerScore} - ${computerScore}. `)
-    } else if (computerScore > playerScore) {
-        console.log(`The computer won with the score of ${playerScore} - ${computerScore}. `)
-    } else {
-        console.log(`The tie ended with a ${playerScore} - ${computerScore} draw. `)
+        if (player_score_int === 5) {
+            last_round_text.textContent = `You have defeated the computer, good job.`;
+            return;
+        } else if (CPU_score_int === 5){
+            last_round_text.textContent = `The computer won. You gotta practice your random picking skills`
+            return; 
+
     }
+
 }
 
 buttons.forEach((button) => {
     console.log(`Id ${button.id}`)
     button.addEventListener("click", () => {
-        playRound(button.id, computerPlay() )
+        game(button.id, computerPlay() )
     })
 })
