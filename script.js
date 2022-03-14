@@ -1,6 +1,17 @@
 const buttons = document.querySelector(".selection").querySelectorAll("div");
 
 const options = ["Rock", "Paper", "Scissors"]
+let player_score_int = 0;
+let CPU_score_int = 0;
+
+// Generates the content of the website
+
+const human_score_element =  document.querySelector("#human-score");
+const CPU_score_element = document.querySelector("#cpu-score");
+const last_round_text = document.querySelector("#last-round-text");
+
+
+
 
 // Generates the CPU´s move
 function computerPlay() {
@@ -21,7 +32,8 @@ function playRound(playerSelection, computerSelection) {
     console.log(`Computer Selection: ${computerSelection}`);
     // The player won the round
     if ((playerSelection === "rock" && computerSelection === "scissors") || (playerSelection === "paper" && computerSelection === "rock") || (playerSelection === "scissors" && computerSelection === "paper")) {
-        console.log(`You won ${playerSelection} beats ${computerSelection}.`);
+        last_round_text.textContent = `You won ${playerSelection} beats ${computerSelection}.`;
+
         return 1;
     // The CPU won the round
     } else if ((computerSelection === "rock" && playerSelection === "scissors") || (computerSelection === "paper" && playerSelection === "rock") || (computerSelection === "scissors" &&playerSelection === "paper")) {
@@ -38,23 +50,19 @@ function playRound(playerSelection, computerSelection) {
   Simulates 5 round of rock paper scissors and displays the winner of the series.
 
 */
-function game() {
-    // initializing the scores
-    let playerScore = 0;
-    let computerScore = 0;
+function game(playerSelection, cpuSelection) {
+
     // playing the game for 5 rounds
-    for (let i = 0; i < 5; i++) {
+    while (player_score_int < 5 ||CPU_score_int < 5)
         // asks the user for legitimate choice (Rock, Paper or Scissor)
-        let playerSelection
-        do {
-            playerSelection = prompt("Rock, Paper, Scissors? ", "").toLowerCase();
-        } while (playerSelection !== "Rock".toLowerCase() && playerSelection !== "Paper".toLowerCase() && playerSelection !== "Scissors".toLowerCase());
         // CPU choice with the help of computerPlay function
         computerSelection = computerPlay()
         result = playRound(playerSelection, computerSelection)
         // Adding to the result based on the turn´s result
         if (result === 1) {
-            playerScore++;
+            player_score_int++;
+            human_score_element.textContent = player_score_int;
+
         } else if (result === -1) {
             computerScore++;
         }

@@ -77,8 +77,19 @@ html {
 
 #rock, #paper, #scissors {
     width: 150px;
+    cursor: pointer;
     height: auto;
     margin: 20px 45px 20px 45px;
     padding: 25px;
     border: solid 5px black;
+    transition: all 0.2s ease-in-out;
+}
+
+#rock:hover, #paper:hover, #scissors:hover {
+    transform: scale(1.1);
+}
+
+#rock:active, #paper:active, #scissors:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(5px);
 }
