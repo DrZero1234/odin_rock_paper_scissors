@@ -56,9 +56,38 @@ html {
 .last-round-result {
     display: flex;
     justify-content: center;
-    margin: 20px;
 }
 
+/* Play again nutton */
+
+.retry {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+#play-again {
+    display: none;
+    background-color: #BBC8CA;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    font-family: Snell Roundhand, cursive;
+    font-size: 32px;
+    padding: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+#play-again:hover {
+    transform: scale(1.1);
+}
+
+#play-again:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(5px);
+}
 /* Rock Paper Scissors */
 
 .selection {
