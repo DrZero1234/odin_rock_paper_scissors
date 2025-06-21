@@ -1,124 +1,128 @@
-@import url('http://fonts.cdnfonts.com/css/60s-scoreboard');
-@import url('http://fonts.cdnfonts.com/css/sf-pixelate');
-
-                
+@import url("http://fonts.cdnfonts.com/css/60s-scoreboard");
+@import url("http://fonts.cdnfonts.com/css/sf-pixelate");
 
 /* Base of the website */
 
 html {
-    background-color: #A1A0C5;
-    box-sizing: border-box;
-    font-family:'SF Pixelate','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 24px;
+  background-color: #a1a0c5;
+  box-sizing: border-box;
+  font-family: "SF Pixelate", "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+  font-size: 24px;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-
-
 .title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: yellow;
-    height: 100px;
-    margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: yellow;
+  height: 100px;
+  margin-bottom: 10px;
 }
 
 .intro {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 /* Scoreboard styles */
 
 .scoreboard {
-    font-family: "60s Scoreboard", sans-serif;
-    color: orange;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 30px;
+  font-family: "60s Scoreboard", sans-serif;
+  color: orange;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 30px;
 }
 
-.score, #score-separator {
-    font-size: 80px;
+.score,
+#score-separator {
+  font-size: 80px;
 }
 
 /* status text styles */
 
 .last-round-result {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 /* Play again nutton */
 
 .retry {
-    display: flex;
-    justify-content: center;
-    margin: 50px;
+  display: flex;
+  justify-content: center;
+  margin: 50px;
 }
 
 #play-again {
-    display: none;
-    background-color: #BBC8CA;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
-    font-family: Snell Roundhand, cursive;
-    font-size: 32px;
-    padding: 20px;
-    transition: all 0.2s ease-in-out;
+  display: none;
+  background-color: #bbc8ca;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  font-family: Snell Roundhand, cursive;
+  font-size: 32px;
+  padding: 20px;
+  transition: all 0.2s ease-in-out;
 }
 
 #play-again:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 #play-again:active {
-    box-shadow: 0 5px #666;
-    transform: translateY(5px);
+  box-shadow: 0 5px #666;
+  transform: translateY(5px);
 }
 /* Rock Paper Scissors */
 
 .selection {
-    display: flex;
-    flex: 2;
-    justify-content: center;
+  display: flex;
+  flex: 2;
+  justify-content: center;
 }
 
 .selection-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    image-rendering: pixelated;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  image-rendering: pixelated;
 }
 
-#rock, #paper, #scissors {
-    width: 150px;
-    cursor: pointer;
-    height: auto;
-    margin: 20px 45px 20px 45px;
-    padding: 25px;
-    border: solid 5px black;
-    transition: all 0.2s ease-in-out;
+#rock,
+#paper,
+#scissors {
+  width: 150px;
+  cursor: pointer;
+  height: auto;
+  margin: 20px 45px 20px 45px;
+  padding: 25px;
+  border: solid 5px black;
+  transition: all 0.2s ease-in-out;
 }
 
-#rock:hover, #paper:hover, #scissors:hover {
-    transform: scale(1.1);
+#rock:hover,
+#paper:hover,
+#scissors:hover {
+  transform: scale(1.1);
 }
 
-#rock:active, #paper:active, #scissors:active {
-    box-shadow: 0 5px #666;
-    transform: translateY(5px);
+#rock:active,
+#paper:active,
+#scissors:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(5px);
 }
